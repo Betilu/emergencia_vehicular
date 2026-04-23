@@ -1,0 +1,99 @@
+{
+  "expo": {
+    "name": "AhoringaLlego",
+    "slug": "ahoringa-llego",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo1.png",
+    "scheme": "emergenciasveh",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.emergencias.vehiculares",
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsLocalNetworking": true
+        },
+        "NSLocationWhenInUseUsageDescription": "Necesitamos tu ubicación para encontrar talleres cercanos y reportar la emergencia.",
+        "NSCameraUsageDescription": "Necesitamos acceso a la cámara para fotografiar el daño del vehículo.",
+        "NSMicrophoneUsageDescription": "Necesitamos el micrófono para que puedas describir el problema en audio.",
+        "NSPhotoLibraryUsageDescription": "Necesitamos acceso a tus fotos para adjuntar imágenes al reporte."
+      }
+    },
+    "android": {
+      "softwareKeyboardLayoutMode": "resize",
+      "usesCleartextTraffic": true,
+      "googleServicesFile": "./google-services.json",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logo1.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.emergencias.vehiculares",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Necesitamos la cámara para fotografiar el daño."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Necesitamos tu ubicación para encontrar talleres cercanos."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/logo1.png",
+          "color": "#ef4444"
+        }
+      ],
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.tuapp",
+          "enableGooglePay": true
+        }
+      ],
+      "expo-font",
+      "expo-audio",
+      "expo-video",
+      "expo-asset"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "apiUrl": "http://192.168.100.200:8080",
+      "easProjectId": "f59886ef-554f-4721-b283-d328fcf64ac1",
+      "eas": {
+        "projectId": "f59886ef-554f-4721-b283-d328fcf64ac1"
+      }
+    },
+    "owner": "rister"
+  }
+}
